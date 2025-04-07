@@ -18,3 +18,11 @@ function updateDateTime() {
 
 setInterval(updateDateTime, 1000);
 updateDateTime();
+
+// Daily Note Save/Load
+const noteField = document.getElementById("dailyNote");
+noteField.value = localStorage.getItem("dailyNote") || "";
+
+noteField.addEventListener("input", () => {
+  localStorage.setItem("dailyNote", noteField.value);
+});
